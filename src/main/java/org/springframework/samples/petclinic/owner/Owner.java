@@ -15,23 +15,15 @@
  */
 package org.springframework.samples.petclinic.owner;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.samples.petclinic.model.Person;
 import org.springframework.util.Assert;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OrderBy;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Simple JavaBean domain object representing an owner.
@@ -47,15 +39,15 @@ import jakarta.validation.constraints.NotEmpty;
 public class Owner extends Person {
 
 	@Column(name = "address")
-	@NotEmpty
+	@NotBlank
 	private String address;
 
 	@Column(name = "city")
-	@NotEmpty
+	@NotBlank
 	private String city;
 
 	@Column(name = "telephone")
-	@NotEmpty
+	@NotBlank
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
@@ -132,10 +124,9 @@ public class Owner extends Person {
 	public Pet getPet(String name, boolean ignoreNew) {
 		name = name.toLowerCase();
 		for (Pet pet : getPets()) {
-			if (!ignoreNew || !pet.isNew()) {
-				String compName = pet.getName();
-				compName = compName == null ? "" : compName.toLowerCase();
-				if (compName.equals(name)) {
+			String compName = pet.getName();
+			if (compName != null && compName.equalsIgnoreCase(name)) {
+				if (!ignoreNew || !pet.isNew()) {
 					return pet;
 				}
 			}

@@ -27,7 +27,6 @@ import org.testcontainers.containers.MySQLContainer;
  * PetClinic Spring Boot Application.
  *
  * @author Dave Syer
- *
  */
 @Configuration
 public class MysqlTestApplication {
@@ -36,7 +35,7 @@ public class MysqlTestApplication {
 	@Profile("mysql")
 	@Bean
 	static MySQLContainer<?> container() {
-		return new MySQLContainer<>("mysql:8.0");
+		return new MySQLContainer<>("mysql:8.2");
 	}
 
 	public static void main(String[] args) {
