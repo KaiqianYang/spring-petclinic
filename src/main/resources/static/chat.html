@@ -5,21 +5,14 @@ The page contains a form for entering a username and password, and a chat sectio
 The page also includes JavaScript code for WebSocket communication and handling page unload event.
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
             name="viewport"
     />
     <title>Chat App | Spring Boot + WebSocket</title>
-    <link href="/css/main.css" rel="stylesheet"/>
-    <link
-            crossorigin="anonymous"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-            referrerpolicy="no-referrer"
-            rel="stylesheet"
-    />
+    <link href="css/main.css" rel="stylesheet"/>
 </head>
 <body
         style="
@@ -111,8 +104,8 @@ The page also includes JavaScript code for WebSocket communication and handling 
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.min.js"></script>
 <script src="js/main.js"></script>
 <script type="text/javascript">
     window.onbeforeunload = function () {
