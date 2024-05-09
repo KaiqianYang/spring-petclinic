@@ -9530,4 +9530,30 @@ strong {
     margin-top: 10px;
     margin-bottom: 30px; } }
 
+.hidden {
+    display: none;
+}
+
+.no-marker {
+    list-style-type: none;
+}
+
+#chat-page .event-message {
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+#chat-page .event-message p {
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+#chat-page .own-message {
+    text-align: right;
+}
+
+#chat-page .own-message i {
+    visibility:hidden !important;
+}
 /*# sourceMappingURL=../../../../../../target/petclinic.css.map */
