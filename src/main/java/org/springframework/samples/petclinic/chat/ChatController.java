@@ -52,4 +52,5 @@ public class ChatController {
 	public String chatPage() {
 		return "chat/chat";
 	}
+
 }
